@@ -4,10 +4,117 @@
     --dark-cyan-color: hsl(185, 75%, 39%);
     --very-dark-desaturated-blue-color: hsl(229, 23%, 23%);
     --dark-grayish-blue-color: hsl(227, 10%, 46%);
-    --dark-gray: hsl(0, 0%, 59%);
+    --dark-gray-color: hsl(0, 0%, 59%);
+    --common-ff: 'Kumbh Sans', sans-serif;
 }
 
 * {
     margin: 0;
     padding: 0;
+}
+
+body {
+    background-color: var(--dark-cyan-color);
+}
+
+.pattern-top, .pattern-bottom {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.pattern-top {
+    background: url('../../images/bg-pattern-top.svg');
+    top: 0;
+    left: 0;
+}
+
+.pattern-bottom {
+    transform: rotate(180deg);
+    background: url('../../images/bg-pattern-bottom.svg');
+    bottom: 0;
+    right: 0;
+}
+
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    width: 350px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--common-ff);
+}
+
+.card-pattern {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: url('../../images/bg-pattern-card.svg');
+    width: 350px;
+    height: 100px;
+}
+
+.card-user-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid var(--dark-gray-color);
+    width: 100%;
+}
+
+.card-user-image {
+    background: url('../../images/image-victor.jpg');
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+    position: absolute;
+    top: -40%;
+}
+
+.card-user-info {
+    margin-top: 4rem;
+}
+
+.card-user-name {
+    font-weight: 700;
+}
+
+.card-user-age, .card-user-local {
+    color: var(--dark-gray-color);
+}
+
+.card-user-stats {
+    margin-top: 1.6rem;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding-bottom: 1.2rem;
+}
+
+
+.card-stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-stat-number {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.card-stat-label {
+    color: var(--dark-gray-color);
+    font-size: 12px;
 }
